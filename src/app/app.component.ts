@@ -31,18 +31,23 @@ export class AppComponent {
     { label: 'Contatos', id: 'contacts' },
   ];
   public contacts = [
-    { type: 'E-mail', value: 'yuri.scavalcante@utlook.com', icon: '', url: '' },
-    { type: 'Telefone', value: '(91)99203-3562', icon: '', url: '' },
+    {
+      type: 'E-mail',
+      value: 'yuri.scavalcante@outlook.com',
+      icon: 'bi bi-envelope',
+      url: '',
+    },
+    { type: 'Telefone', value: '(91)99203-3562', icon: 'bi bi-phone', url: '' },
     {
       type: 'Linkedin',
       value: 'www.linkedin.com/in/yuri-da-silva-cavalcante',
-      icon: '',
+      icon: 'bi bi-linkedin',
       url: 'https://www.linkedin.com/in/yuri-da-silva-cavalcante',
     },
     {
       type: 'GitHub',
       value: 'github.com/yuriscavalcante',
-      icon: '',
+      icon: 'bi bi-github',
       url: 'https://github.com/yuriscavalcante',
     },
   ];

@@ -50,19 +50,18 @@
         <div class="line"></div>
         <div class="text">
           <label>Contatos/></label>
-          <ul *ngFor="let ct of contacts">
-            <li>
-              {{ ct.type }}:
-              <a
-                class="link"
-                href="{{ ct.url }}"
-                target="_blank"
-                *ngIf="ct.url"
-                >{{ ct.value }}</a
-              >
-              <a target="_blank" *ngIf="!ct.url">{{ ct.value }}</a>
-            </li>
-          </ul>
+          <div class="contacts" *ngFor="let ct of contacts">
+            <i class="{{ ct.icon }}"></i>
+            {{ ct.type }}:
+            <a
+              class="link"
+              href="{{ ct.url }}"
+              target="_blank"
+              *ngIf="ct.url"
+              >{{ ct.value }}</a
+            >
+            <a target="_blank" *ngIf="!ct.url">{{ ct.value }}</a>
+          </div>
         </div>
       </div>
       <div class="dot">
