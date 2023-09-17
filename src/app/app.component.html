@@ -38,9 +38,14 @@
         <div class="line"></div>
         <div class="text">
           <label>Skills/></label>
-          <ul *ngFor="let sk of skills">
-            <li>{{ sk }}</li>
-          </ul>
+          <div class="row row-cols-4">
+            <div class="col col-lg-2" *ngFor="let sk of skills">
+              <div class="card" (mouseenter)="onMouseEnter()">
+                <img class="img" src="{{ sk.url }}" />
+                <label>{{ sk.value }}</label>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div class="dot">
@@ -66,6 +71,31 @@
       </div>
       <div class="dot">
         <div class="inner-dot"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="my-modal">Modal title</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <p>Modal body text goes here.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
+        <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
   </div>

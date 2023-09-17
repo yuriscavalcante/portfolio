@@ -1,29 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { FirebaseService } from './services/firebase.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'portfolio';
-  public skills = [
-    'Html',
-    'CSS',
-    'JavaScript',
-    'NodeJs',
-    'Angular',
-    'React',
-    'Postgres',
-    'Typeorm',
-    'Nestjs',
-    'Docker',
-    'Firebase',
-    'Bootstrap',
-    'Ionic',
-    'SPA',
-    'Jest',
-  ];
+  public skills: any[] = [];
   public section = [
     { label: 'Inicio', id: 'start' },
     { label: 'Sobre Mim', id: 'about' },
@@ -51,4 +36,13 @@ export class AppComponent {
       url: 'https://github.com/yuriscavalcante',
     },
   ];
+
+  constructor(private firebaseService: FirebaseService) {}
+
+  async ngOnInit() {
+    this.skills = await this.firebaseService.listSkills();
+  }
+  onMouseEnter() {
+    console.log('mouse enter');
+  }
 }
